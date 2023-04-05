@@ -1,11 +1,11 @@
 import axios from 'axios'
 import { sessionService } from 'redux-react-session'
 
-const localUrl = "https://allwelluserservice.herokuapp.com/"
+const localUrl = "https://allwelluserservice.herokuapp.com"
 
 export const signUpUser = (credentials, history, setFieldError, setSubmitting) => {
     return (dispatch) => {
-        axios.post(`${localUrl}api/users/signup/`,
+        axios.post(`${localUrl}/api/users/signup/`,
         credentials,
         {
             headers: {
@@ -41,7 +41,7 @@ export const loginUser = (credentials, history, setFieldError, setSubmitting) =>
     return () => {
     // check for user details 
 
-        axios.post(`${localUrl}api/users/signin/`,
+        axios.post(`${localUrl}/api/users/signin/`,
         credentials,
         {
             headers: {
@@ -91,7 +91,7 @@ export const forgottenPassword = (credentials, history, setFieldError, setSubmit
     return () => {
     // check for user details 
 
-        axios.post(`${localUrl}api/users/forgotpassword/`,
+        axios.post(`${localUrl}/api/users/forgotpassword/`,
         credentials,
         {
             headers: {
@@ -122,7 +122,7 @@ export const forgottenPassword = (credentials, history, setFieldError, setSubmit
 export const resetPassword = (credentials, history, setFieldError, setSubmitting, accessToken) => {
     return () => {
     // check for user details 
-        axios.patch(`${localUrl}api/users/changepassword/${accessToken}`,
+        axios.patch(`${localUrl}/api/users/changepassword/${accessToken}`,
         
         credentials,
         {
